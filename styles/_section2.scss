@@ -1,0 +1,83 @@
+.section2{
+    // border: 4px solid red;
+    position: relative;
+    overflow: hidden;
+    height: 975px;
+
+   h2{
+       @include textH2(#1F3E5A);
+   }
+   h3{
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+    color: #1F3E5A;
+    margin-bottom: 30px
+   }
+
+   @include textParagraphe(#4C5862);
+}
+
+.containerSection2{
+    margin-top: 120px;
+    @include flexCenter(row);
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    overflow: hidden;
+ 
+
+    .articles{
+        margin-left: 9.76vw;
+        @include flexCenter(column);
+        align-items: flex-start;
+    }
+
+    .article1, .article2{
+        width: 560px;
+    }
+
+    .article1{
+        margin-bottom: 64px;
+    }
+
+}
+
+.containerSection2 .editorDeskstop{
+    position: absolute;
+    right: -250px;
+}
+
+.editorMobile{
+    display: none;
+}
+
+
+@media (max-width: 1330px){
+    .containerSection2 .editorDeskstop{
+        position: absolute;
+        right: -400px;
+    }
+}
+
+@media (max-width: 1160px){
+    .containerSection2{
+        margin-top: 120px;
+        @include flexCenter(column);
+      
+        justify-content: space-between;
+        overflow: hidden;
+        flex-wrap: wrap;}
+    .editorMobile{
+        display: block;
+    }
+    .containerSection2 .editorMobile{
+        position: static;
+        right: 0;
+    }
+    .editorDeskstop{
+        display: none;
+    }
+
+}

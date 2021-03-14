@@ -1,0 +1,14 @@
+@import "./variables";
+@import "./section1";
+@import "./section2";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  display: block;
+  max-width: 100%;  /* Max width 100% mais si elle n'a plus la place, elle va se reduire */
+}

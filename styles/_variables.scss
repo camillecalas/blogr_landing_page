@@ -1,0 +1,61 @@
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin primaryButton($backgroundButton) {
+    cursor: pointer;
+    border: none;
+    width: 137px;
+    height: 48px;
+    border-radius: 28px;
+    background: $backgroundButton;
+}
+
+
+@mixin paragraphe($colorParagraphe) {
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+    color: $colorParagraphe;
+}
+
+
+@mixin textNav($colorNav) {
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    font-size: 16px;
+    color: $colorNav;
+}
+
+@mixin textH2($colorH2) {
+    font-family: 'Overpass';
+    margin-top: 150px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 61px;
+    text-align: center;
+    letter-spacing: -1.2px;
+    color: $colorH2;
+}
+
+
+@mixin textParagraphe($colorTextPara) {
+    font-family: 'Overpass';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 28px;
+
+letter-spacing: 0.5px;
+
+color:$colorTextPara;
+    
+}
+
