@@ -1,28 +1,39 @@
 .section1 {
-  background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+  background: url("/styles/bg-pattern-circles-big.svg") no-repeat center/cover,  linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%),;
   border-radius: 0px 0px 0px 100px;
   height: 600px;
-  position: relative;
-  overflow: hidden;
+}
+
+.burger{
+  display: none;
 }
 
 // HEADER
 header {
-  margin-left: 9.76vw;
+    margin-left: 9.76vw;
     margin-right: 9.76vw;
-    border: 4px solid blue;
+    border: 4px solid yellow;
     @include flexCenter(row);
-    justify-content: space-between;
+    // justify-content: space-between;
     @include textNav(white);
 
   nav {
-      z-index: 10;
+    border: 4px solid blue;
+    // width: 85%;
       @include flexCenter(row);
+      justify-content: space-between;
   }
 
+
+  .navFirst{
+    @include flexCenter(row);
+    justify-content: space-between;
+  }
   nav a {
       text-decoration: none;
       @include textNav(white);
+      @include flexCenter(row);
+      gap: 10px;
   }
 
   nav img {
@@ -113,9 +124,63 @@ header {
     z-index: 1;
   top: -1200px;
     right: -800px;
-    // right: 300px;
-  // bottom: -100px;
     position: absolute;
-  // mix-blend-mode:multiply;
+
   } 
+  }
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 975px){
+    .burger{
+      display: block;
+      cursor: pointer;
+  }
+
+  header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+  }
+
+  .burger span{
+      width: 40px;
+      height: 5px;
+      background: white;
+      border-radius: 54px;
+      margin: 6px 0;
+      display: block;  /* span sont des elements de types inline, display block permet de les faire prendre toutes la largeur et de commencer a la ligne */
+  }
+
+  .burger {
+      background: #344892;
+      padding: 10px;
+      z-index: 20;  /* pour que le logo et le burger passe devant */
+  }
+
+  nav{
+    z-index: 20;;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: #344892;
+      flex-direction: column;
+      justify-content: center !important;
+      transform: translateX(-100%);  /* translateX je deplace de 100% de sa taille vers la droite  -- -100% ca irait vers la gauche  - si on met Y ca change l'axe vers le haut ou le bas*/
+      transition: .5s;
+  }
+
+  .menu-open{
+      transform: translateX(0); /* quand je clique mon menu revient en position normal */
+  }
   }

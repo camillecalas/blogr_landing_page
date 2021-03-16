@@ -1,0 +1,64 @@
+.section3{
+    background: url('/styles/bg-pattern-circles.svg') no-repeat, linear-gradient(135deg, #2D2E40 0%, #3F4164 100%);;
+    border-radius: 0px 100px;
+    height: 400px;
+    position: relative;
+}
+
+
+.containerS3{
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 4px solid green;
+    @include flexCenter(row);
+    gap:98px;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: -80px;
+
+    article{
+        width: max(540px, 100%);
+        margin-right: 12vw;
+        h2{
+            @include textH2(white);
+            margin-top: 0px;
+            text-align: left;
+        }
+        p{
+            @include textParagraphe(white);
+        }
+    }
+ 
+}
+
+
+
+
+
+
+@media (max-width:975px){
+    .section3{
+        height: 625px;
+    
+        .containerS3{
+             @include flexCenter(column);
+            justify-content: center;
+             align-items: center;
+            top: -200px;
+            gap:47px;
+        }   
+
+        article{
+            margin-right: 0vw;
+            width: 100%;
+             h2{
+                text-align: center;
+                }
+            p{
+                 text-align: center;
+            }
+        }
+    }
+}
+

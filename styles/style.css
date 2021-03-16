@@ -1,14 +1,36 @@
 .section1 {
-  background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+  background: url("/styles/bg-pattern-circles-big.svg") no-repeat center/cover, linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
   border-radius: 0px 0px 0px 100px;
   height: 600px;
-  position: relative;
-  overflow: hidden;
+}
+
+.burger {
+  display: none;
 }
 
 header {
   margin-left: 9.76vw;
   margin-right: 9.76vw;
+  border: 4px solid yellow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Ubuntu";
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+}
+header nav {
   border: 4px solid blue;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -26,13 +48,8 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: "Ubuntu";
-  font-weight: bold;
-  font-size: 16px;
-  color: white;
 }
-header nav {
-  z-index: 10;
+header .navFirst {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,6 +63,9 @@ header nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 header nav a {
   text-decoration: none;
@@ -53,6 +73,20 @@ header nav a {
   font-weight: bold;
   font-size: 16px;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 10px;
 }
 header nav img {
   margin-right: 64px;
@@ -218,17 +252,69 @@ header button:hover {
   position: absolute;
 }
 
+@media (max-width: 975px) {
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .burger span {
+    width: 40px;
+    height: 5px;
+    background: white;
+    border-radius: 54px;
+    margin: 6px 0;
+    display: block;
+    /* span sont des elements de types inline, display block permet de les faire prendre toutes la largeur et de commencer a la ligne */
+  }
+
+  .burger {
+    background: #344892;
+    padding: 10px;
+    z-index: 20;
+    /* pour que le logo et le burger passe devant */
+  }
+
+  nav {
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #344892;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    /* translateX je deplace de 100% de sa taille vers la droite  -- -100% ca irait vers la gauche  - si on met Y ca change l'axe vers le haut ou le bas*/
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+
+  .menu-open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    /* quand je clique mon menu revient en position normal */
+  }
+}
 .section2 {
+  border: 4px solid green;
   position: relative;
   overflow: hidden;
-  height: 975px;
-  font-family: "Overpass";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 28px;
-  letter-spacing: 0.5px;
-  color: #4C5862;
+  min-height: 1100px;
 }
 .section2 h2 {
   font-family: "Overpass";
@@ -241,6 +327,16 @@ header button:hover {
   letter-spacing: -1.2px;
   color: #1F3E5A;
 }
+.section2 p {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: #4C5862;
+  text-align: left;
+}
 .section2 h3 {
   font-family: "Overpass";
   font-style: normal;
@@ -249,9 +345,11 @@ header button:hover {
   line-height: 28px;
   color: #1F3E5A;
   margin-bottom: 30px;
+  text-align: left;
 }
 
 .containerSection2 {
+  border: 4px solid turquoise;
   margin-top: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -271,7 +369,6 @@ header button:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  overflow: hidden;
 }
 .containerSection2 .articles {
   margin-left: 9.76vw;
@@ -293,7 +390,8 @@ header button:hover {
           align-items: flex-start;
 }
 .containerSection2 .article1, .containerSection2 .article2 {
-  width: 560px;
+  width: min(560px, 100%);
+  padding: 20px;
 }
 .containerSection2 .article1 {
   margin-bottom: 64px;
@@ -315,8 +413,14 @@ header button:hover {
   }
 }
 @media (max-width: 1160px) {
-  .containerSection2 {
-    margin-top: 120px;
+  .section2 {
+    border: 4px solid yellow;
+    position: static;
+    overflow: visible;
+    margin-bottom: 300px;
+  }
+  .section2 .articles {
+    margin-left: 0vw;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -330,16 +434,38 @@ header button:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    overflow: hidden;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    align-items: center;
+  }
+  .section2 h2 {
+    margin-top: 100px;
+    margin-bottom: 38px;
+  }
+  .section2 h3, .section2 p {
+    text-align: center;
+  }
+
+  .containerSection2 {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-content: center;
+    overflow: visible;
   }
 
   .editorMobile {
     display: block;
+    margin-bottom: 46px;
   }
 
   .containerSection2 .editorMobile {
@@ -349,6 +475,336 @@ header button:hover {
 
   .editorDeskstop {
     display: none;
+  }
+}
+.section3 {
+  background: url("/styles/bg-pattern-circles.svg") no-repeat, linear-gradient(135deg, #2D2E40 0%, #3F4164 100%);
+  border-radius: 0px 100px;
+  height: 400px;
+  position: relative;
+}
+
+.containerS3 {
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 4px solid green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 98px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: -80px;
+}
+.containerS3 article {
+  width: max(540px, 100%);
+  margin-right: 12vw;
+}
+.containerS3 article h2 {
+  font-family: "Overpass";
+  margin-top: 150px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 61px;
+  text-align: center;
+  letter-spacing: -1.2px;
+  color: white;
+  margin-top: 0px;
+  text-align: left;
+}
+.containerS3 article p {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+@media (max-width: 975px) {
+  .section3 {
+    height: 625px;
+  }
+  .section3 .containerS3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: -200px;
+    gap: 47px;
+  }
+  .section3 article {
+    margin-right: 0vw;
+    width: 100%;
+  }
+  .section3 article h2 {
+    text-align: center;
+  }
+  .section3 article p {
+    text-align: center;
+  }
+}
+.laptopMobile {
+  display: none;
+}
+
+.section4 {
+  border: 4px solid yellow;
+  position: relative;
+  overflow: hidden;
+  min-height: 800px;
+  margin: auto;
+  margin-top: 116px;
+}
+.section4 p {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: #4C5862;
+  text-align: left;
+}
+.section4 h3 {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 28px;
+  color: #1F3E5A;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.containerSection4 {
+  padding-top: 150px;
+  border: 4px solid turquoise;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 125px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.containerSection4 .articles {
+  margin-right: 9.76vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.containerSection4 .article1, .containerSection4 .article2 {
+  width: min(560px, 100%);
+  padding: 20px;
+}
+.containerSection4 .article1 {
+  margin-bottom: 64px;
+}
+
+.laptopDeskstop {
+  position: absolute;
+  left: -200px;
+}
+
+@media (max-width: 1385px) {
+  .laptopDeskstop {
+    position: absolute;
+    left: -400px;
+  }
+}
+@media (max-width: 1160px) {
+  .section4 {
+    margin-top: 79px;
+    border: 4px solid yellow;
+    position: static;
+    overflow: visible;
+    margin-bottom: 300px;
+    min-height: auto;
+  }
+  .section4 .articles {
+    margin-right: 0vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    align-items: center;
+  }
+  .section4 h2 {
+    margin-top: 100px;
+    margin-bottom: 38px;
+  }
+  .section4 h3, .section4 p {
+    text-align: center;
+  }
+
+  .containerSection4 {
+    padding-top: 0px;
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+    gap: 0px;
+  }
+
+  .laptopMobile {
+    display: block;
+    margin-bottom: 46px;
+  }
+
+  .containerSection4 .editorMobile {
+    position: static;
+    right: 0;
+  }
+
+  .laptopDeskstop {
+    display: none;
+  }
+}
+footer {
+  min-height: 359px;
+  background: #24242C;
+  border-radius: 0px 100px 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 70px;
+}
+footer ul {
+  list-style: none;
+  cursor: pointer;
+}
+footer li {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 33px;
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
+footer li:hover {
+  text-decoration: underline;
+}
+footer .navWord {
+  opacity: 1;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 580px) {
+  footer {
+    height: auto;
+    background: #24242C;
+    border-radius: 0px 100px 0px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+  }
+  footer img {
+    margin-bottom: 72px;
+  }
+  footer ul {
+    margin-bottom: 40px;
+  }
+  footer li {
+    text-align: center;
   }
 }
 * {

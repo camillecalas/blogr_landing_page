@@ -1,12 +1,17 @@
-.section2{
-    border: 4px solid green;
+.laptopMobile{
+    display: none;
+}
+
+
+.section4{
+ 
+    border: 4px solid yellow;
     position: relative;
     overflow: hidden;
-    min-height: 1100px;
+    min-height: 800px;
+    margin: auto;
+    margin-top: 116px;
        
-    h2{
-        @include textH2(#1F3E5A);
-    }
        
     p{
         @include textParagraphe(#4C5862);
@@ -20,17 +25,20 @@
    
 }
 
-.containerSection2{
+.containerSection4{
+    padding-top: 150px;
     border: 4px solid turquoise;
-    margin-top: 120px;
     @include flexCenter(row);
-    flex-wrap: wrap-reverse;
-    justify-content: space-between;
+    gap: 125px;
+
+
+    // flex-wrap: wrap-reverse;
+    justify-content: space-around;
 
     .articles{
-        margin-left: 9.76vw;
+        margin-right: 9.76vw;
         @include flexCenter(column);
-        align-items: flex-start;
+        align-items: flex-end;
     }
 
     .article1, .article2{
@@ -44,37 +52,37 @@
 
 }
 
-.containerSection2 .editorDeskstop{
+.laptopDeskstop{
     position: absolute;
-    right: -250px;
+    left: -200px;
 }
 
-.editorMobile{
-    display: none;
-}
+
 
 
 
 
 ///////////////////// MEDIA QUERIES/////////////////////
 /////////////////////////// 1330PX///////////////////////////
-@media (max-width: 1330px){
-    .containerSection2 .editorDeskstop{
+@media (max-width: 1385px){
+   .laptopDeskstop{
         position: absolute;
-        right: -400px;
+        left: -400px;
     }
 }
 
 /////////////////////////// 1160PX///////////////////////////
 @media (max-width: 1160px){
-    .section2{
+    .section4{
+        margin-top: 79px;
         border:4px solid yellow;
         position: static;
         overflow: visible;
         margin-bottom: 300px;
+        min-height: auto;
 
         .articles{
-            margin-left: 0vw;
+            margin-right: 0vw;
             @include flexCenter(column);
             align-items: center;
         }
@@ -88,24 +96,26 @@
             text-align: center;
         }   
     }
-    .containerSection2{
+    .containerSection4{
+        padding-top: 0px;
         position: static;
         @include flexCenter(column);
         justify-content: center;
         overflow:visible;
+        gap: 0px;
     }
 
-    .editorMobile{
+    .laptopMobile{
             display: block;
             margin-bottom: 46px;
     }
 
-    .containerSection2 .editorMobile{
+    .containerSection4 .editorMobile{
         position: static;
         right: 0;
     }
 
-    .editorDeskstop{
+    .laptopDeskstop{
         display: none;
     }
  

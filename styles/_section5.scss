@@ -1,0 +1,60 @@
+footer{
+    min-height: 359px;
+    background: #24242C;
+    border-radius: 0px 100px 0px 0px;
+    @include flexCenter(row);
+    justify-content: space-around;
+    align-items: flex-start;
+
+    padding-top: 70px;
+  
+    ul{
+        list-style: none;
+        cursor: pointer;
+    
+    }
+
+
+    li{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 33px;
+        color: #FFFFFF;
+        mix-blend-mode: normal;
+        opacity: 0.75;
+        &:hover{
+            text-decoration: underline;
+        }
+    
+  }
+
+    .navWord{
+        opacity: 1;
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 580px){
+    footer{
+        height: auto;
+        background: #24242C;
+        border-radius: 0px 100px 0px 0px;
+        @include flexCenter(column);
+        justify-content: center;
+        align-items: center;
+        padding-top: 70px;
+
+        img{
+            margin-bottom: 72px;
+        }
+
+        ul{
+            margin-bottom: 40px;
+        }
+        li{
+            text-align: center;
+        }
+}
+}

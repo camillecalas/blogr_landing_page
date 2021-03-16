@@ -12,6 +12,7 @@
     height: 48px;
     border-radius: 28px;
     background: $backgroundButton;
+
 }
 
 
@@ -43,6 +44,17 @@
     text-align: center;
     letter-spacing: -1.2px;
     color: $colorH2;
+
+}
+
+@mixin textH3($colorH3) {
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+    color: $colorH3;
+    margin-bottom: 30px;
 }
 
 
@@ -52,10 +64,8 @@ font-style: normal;
 font-weight: 300;
 font-size: 16px;
 line-height: 28px;
-
 letter-spacing: 0.5px;
-
 color:$colorTextPara;
-    
 }
+
 
