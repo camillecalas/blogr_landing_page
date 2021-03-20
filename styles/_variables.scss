@@ -5,13 +5,18 @@
     flex-direction: $direction;
 }
 
-@mixin primaryButton($backgroundButton) {
+@mixin primaryButton($backgroundButton, $colorNav) {
     cursor: pointer;
     border: none;
     width: 137px;
     height: 48px;
     border-radius: 28px;
     background: $backgroundButton;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    font-size: 16px;
+    color: $colorNav;
+    outline: none;
 
 }
 

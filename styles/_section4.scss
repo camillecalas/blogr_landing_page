@@ -4,11 +4,9 @@
 
 
 .section4{
- 
-    border: 4px solid yellow;
     position: relative;
     overflow: hidden;
-    min-height: 800px;
+    min-height: 820px;
     margin: auto;
     margin-top: 116px;
        
@@ -27,7 +25,6 @@
 
 .containerSection4{
     padding-top: 150px;
-    border: 4px solid turquoise;
     @include flexCenter(row);
     gap: 125px;
 
@@ -75,11 +72,9 @@
 @media (max-width: 1160px){
     .section4{
         margin-top: 79px;
-        border:4px solid yellow;
         position: static;
         overflow: visible;
-        margin-bottom: 300px;
-        min-height: auto;
+        height: auto;
 
         .articles{
             margin-right: 0vw;

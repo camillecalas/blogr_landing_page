@@ -1,37 +1,68 @@
 .section1 {
   background: url("/styles/bg-pattern-circles-big.svg") no-repeat center/cover, linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
   border-radius: 0px 0px 0px 100px;
-  height: 600px;
+  min-height: 600px;
 }
 
-.burger {
-  display: none;
+button {
+  cursor: pointer;
+  border: none;
+  width: 137px;
+  height: 48px;
+  border-radius: 28px;
+  background: white;
+  font-family: "Ubuntu";
+  font-weight: bold;
+  font-size: 16px;
+  color: #ff505c;
+  outline: none;
 }
-
-header {
-  margin-left: 9.76vw;
-  margin-right: 9.76vw;
-  border: 4px solid yellow;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+button:hover {
+  cursor: pointer;
+  border: none;
+  width: 137px;
+  height: 48px;
+  border-radius: 28px;
+  background: #ff505c;
   font-family: "Ubuntu";
   font-weight: bold;
   font-size: 16px;
   color: white;
+  outline: none;
 }
-header nav {
-  border: 4px solid blue;
+
+.buttonSecondary {
+  margin-left: 16px;
+  cursor: pointer;
+  border: none;
+  width: 137px;
+  height: 48px;
+  border-radius: 28px;
+  background: #ff505c;
+  font-family: "Ubuntu";
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  outline: none;
+}
+.buttonSecondary:hover {
+  cursor: pointer;
+  border: none;
+  width: 137px;
+  height: 48px;
+  border-radius: 28px;
+  background: white;
+  font-family: "Ubuntu";
+  font-weight: bold;
+  font-size: 16px;
+  color: #ff505c;
+  outline: none;
+}
+
+header {
+  padding-top: 63px;
+  padding-left: 9.76vw;
+  padding-right: 9.76vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,7 +80,12 @@ header nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-header .navFirst {
+header img {
+  margin-right: 34px;
+}
+
+nav {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,12 +103,15 @@ header .navFirst {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-header nav a {
+nav p {
   text-decoration: none;
   font-family: "Ubuntu";
   font-weight: bold;
   font-size: 16px;
   color: white;
+}
+
+.dropdown {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,16 +125,26 @@ header nav a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 10px;
 }
-header nav img {
-  margin-right: 64px;
+
+.dropdown div {
+  margin-left: 32px;
 }
-header .lien3 ul {
-  display: none;
+
+li {
+  list-style: none;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 33px;
+  color: #2D2E40;
 }
-header .signIn {
-  z-index: 10;
+li:hover {
+  font-weight: bold;
+}
+
+.login {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,34 +160,77 @@ header .signIn {
           flex-direction: row;
   gap: 32px;
 }
-header button {
-  cursor: pointer;
-  border: none;
-  width: 137px;
-  height: 48px;
-  border-radius: 28px;
-  background: white;
-  font-family: "Ubuntu";
-  font-weight: bold;
-  font-size: 16px;
-  color: #ff505c;
+
+.connect {
+  position: relative;
 }
-header button:hover {
+
+.connect ul {
+  position: absolute;
+  width: 168px;
+  height: 147px;
+  margin-top: 27px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+          box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: translateY(10px);
+  transition: translateY(10px);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.connect span {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.dropdown button {
   cursor: pointer;
   border: none;
   width: 137px;
   height: 48px;
   border-radius: 28px;
-  background: #ff505c;
+  background: transparent;
   font-family: "Ubuntu";
   font-weight: bold;
   font-size: 16px;
   color: white;
+  outline: none;
+  cursor: pointer;
+}
+.dropdown button:hover {
+  text-decoration: underline;
+}
+
+.connect button:focus + ul {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.connect button:focus + span {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .accueil {
-  z-index: 10;
-  margin-top: 175px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,107 +244,291 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-top: 100px;
 }
-.accueil h1 {
-  z-index: 5;
+
+:is(h1, .underTitle) {
   font-family: "Overpass";
+  color: white;
+  text-align: center;
+}
+
+h1 {
   font-weight: 600;
   font-size: 64px;
-  text-align: center;
   letter-spacing: -1.92px;
-  color: #ffffff;
 }
-.accueil .underTitle {
-  z-index: 5;
-  font-family: "Overpass";
-  font-style: normal;
+
+.underline {
   font-weight: 300;
   font-size: 20px;
   line-height: 31px;
-  text-align: center;
-  color: #ffffff;
-}
-.accueil .AccueilButton {
-  width: 290px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  z-index: 5;
-  margin-top: 48px;
-  border: 4px solid blue;
-}
-.accueil .AccueilButton button {
-  display: inline-block;
-  cursor: pointer;
-  border: none;
-  width: 137px;
-  height: 48px;
-  border-radius: 28px;
-  background: white;
-  font-family: "Ubuntu";
-  font-weight: bold;
-  font-size: 16px;
-  color: #ff505c;
-}
-.accueil .AccueilButton button:hover {
-  cursor: pointer;
-  border: none;
-  width: 137px;
-  height: 48px;
-  border-radius: 28px;
-  background: #ff505c;
-  font-family: "Ubuntu";
-  font-weight: bold;
-  font-size: 16px;
-  color: white;
-}
-.accueil .AccueilButton .buttonSecondary {
-  cursor: pointer;
-  border: none;
-  width: 137px;
-  height: 48px;
-  border-radius: 28px;
-  background: transparent;
-  border: 1px solid white;
-  font-family: "Ubuntu";
-  font-weight: bold;
-  font-size: 16px;
-  color: white;
-}
-.accueil .AccueilButton .buttonSecondary:hover {
-  cursor: pointer;
-  border: none;
-  width: 137px;
-  height: 48px;
-  border-radius: 28px;
-  background: white;
-  font-family: "Ubuntu";
-  font-weight: bold;
-  font-size: 16px;
-  color: #ff505c;
-}
-.accueil .cercle {
-  width: 170%;
-  z-index: 1;
-  top: -1200px;
-  right: -800px;
-  position: absolute;
 }
 
-@media (max-width: 975px) {
+.accueilButton {
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  .dropdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .dropdown div {
+    margin-left: 0px;
+  }
+
+  li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 33px;
+    color: #2D2E40;
+  }
+  li:hover {
+    font-weight: bold;
+  }
+
+  .login {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 32px;
+  }
+
+  .connect {
+    position: relative;
+  }
+
+  .connect ul {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    margin-top: 24px;
+    background: #979797;
+    mix-blend-mode: normal;
+    opacity: 0.08;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: translateY(10px);
+    transition: translateY(10px);
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  .connect span {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  .dropdown button {
+    cursor: pointer;
+    border: none;
+    width: 137px;
+    height: 48px;
+    border-radius: 28px;
+    background: transparent;
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size: 16px;
+    color: #1F3E5A;
+    outline: none;
+    cursor: pointer;
+  }
+  .dropdown button:hover {
+    text-decoration: underline;
+  }
+
+  .connect button:focus + ul {
+    opacity: 1;
+    pointer-events: all;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  .connect button:focus + span {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .login::before {
+    content: "";
+    width: 276px;
+    border: 1px solid #E8E4E4;
+  }
+
+  .signUp {
+    cursor: pointer;
+    border: none;
+    width: 137px;
+    height: 48px;
+    border-radius: 28px;
+    background: #ff505c;
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    outline: none;
+  }
+  .signUp:hover {
+    cursor: pointer;
+    border: none;
+    width: 137px;
+    height: 48px;
+    border-radius: 28px;
+    background: white;
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size: 16px;
+    color: #ff505c;
+    outline: none;
+  }
+
+  nav {
+    margin-left: 32px;
+    width: 100%;
+    border: 4px solid yellow;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-content: center;
+  }
+  nav .menuPrincipal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 24px;
+  }
+  nav a {
+    margin-left: 0px;
+  }
+  nav a, nav p {
+    text-decoration: none;
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size: 16px;
+    color: #1F3E5A;
+    font-size: 18px;
+    font-family: "Overpass";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  .icone {
+    stroke: #ff505c;
+  }
+
+  .login {
+    margin-top: 49px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 24px;
+  }
+
+  .accueil {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 200px;
+  }
+
   .burger {
     display: block;
     cursor: pointer;
@@ -266,30 +542,32 @@ header button:hover {
   }
 
   .burger span {
-    width: 40px;
-    height: 5px;
+    width: 32px;
+    height: 2px;
     background: white;
-    border-radius: 54px;
     margin: 6px 0;
     display: block;
     /* span sont des elements de types inline, display block permet de les faire prendre toutes la largeur et de commencer a la ligne */
   }
 
-  .burger {
-    background: #344892;
+  .burger,
+.iconeSite {
     padding: 10px;
-    z-index: 20;
+    z-index: 1;
     /* pour que le logo et le burger passe devant */
   }
 
   nav {
-    z-index: 20;
+    margin-left: 0px;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0px;
     height: 100%;
     width: 100%;
-    background: #344892;
+    background: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -297,11 +575,12 @@ header button:hover {
     -webkit-box-pack: center !important;
         -ms-flex-pack: center !important;
             justify-content: center !important;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
     /* translateX je deplace de 100% de sa taille vers la droite  -- -100% ca irait vers la gauche  - si on met Y ca change l'axe vers le haut ou le bas*/
     -webkit-transition: 0.5s;
     transition: 0.5s;
+    margin-right: 50px;
   }
 
   .menu-open {
@@ -311,7 +590,6 @@ header button:hover {
   }
 }
 .section2 {
-  border: 4px solid green;
   position: relative;
   overflow: hidden;
   min-height: 1100px;
@@ -349,7 +627,6 @@ header button:hover {
 }
 
 .containerSection2 {
-  border: 4px solid turquoise;
   margin-top: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -414,10 +691,9 @@ header button:hover {
 }
 @media (max-width: 1160px) {
   .section2 {
-    border: 4px solid yellow;
     position: static;
     overflow: visible;
-    margin-bottom: 300px;
+    margin-bottom: 200px;
   }
   .section2 .articles {
     margin-left: 0vw;
@@ -438,7 +714,7 @@ header button:hover {
   }
   .section2 h2 {
     margin-top: 100px;
-    margin-bottom: 38px;
+    margin-bottom: 0px;
   }
   .section2 h3, .section2 p {
     text-align: center;
@@ -477,6 +753,11 @@ header button:hover {
     display: none;
   }
 }
+@media (max-width: 600px) {
+  .section2 {
+    margin-bottom: 250px;
+  }
+}
 .section3 {
   background: url("/styles/bg-pattern-circles.svg") no-repeat, linear-gradient(135deg, #2D2E40 0%, #3F4164 100%);
   border-radius: 0px 100px;
@@ -487,7 +768,6 @@ header button:hover {
 .containerS3 {
   padding-left: 20px;
   padding-right: 20px;
-  border: 4px solid green;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -574,10 +854,9 @@ header button:hover {
 }
 
 .section4 {
-  border: 4px solid yellow;
   position: relative;
   overflow: hidden;
-  min-height: 800px;
+  min-height: 820px;
   margin: auto;
   margin-top: 116px;
 }
@@ -604,7 +883,6 @@ header button:hover {
 
 .containerSection4 {
   padding-top: 150px;
-  border: 4px solid turquoise;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -663,11 +941,9 @@ header button:hover {
 @media (max-width: 1160px) {
   .section4 {
     margin-top: 79px;
-    border: 4px solid yellow;
     position: static;
     overflow: visible;
-    margin-bottom: 300px;
-    min-height: auto;
+    height: auto;
   }
   .section4 .articles {
     margin-right: 0vw;
@@ -730,6 +1006,7 @@ header button:hover {
   }
 }
 footer {
+  margin-top: 123px;
   min-height: 359px;
   background: #24242C;
   border-radius: 0px 100px 0px 0px;

@@ -9,7 +9,6 @@
 .containerS3{
     padding-left: 20px;
     padding-right: 20px;
-    border: 4px solid green;
     @include flexCenter(row);
     gap:98px;
     justify-content: space-around;

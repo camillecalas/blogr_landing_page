@@ -1,149 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Blogr Landing Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <!------------------------------------SECTION 1 ------------------------------------>
-    <section class="section1">
 
-        <header>
-            <img src="images/logo.svg" alt="logo Blogr">
-            <nav class="primaryNav">
-                <a href="">Product <span class="span2"><img src="images/icon-arrow-light.svg" alt=""></span></a>
-                <a href="">Company <span class="span2"><img src="images/icon-arrow-light.svg" alt=""></span></a>
-                <a href="">Connect <span class="span2"><img src="images/icon-arrow-light.svg" alt=""></span></a>
-                    <!-- <ul>
+    <section class="section1">
+      <header>
+        <img src="images/logo.svg" alt="logo Blogr" />
+        <nav>
+          <div class="dropdown">
+            <button>
+              Product
+              <span class="span2"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="10" height="7">
+                  <path
+                    class="icone"
+                    fill="none"
+                    stroke="#FFF"
+                    stroke-width="2"
+                    opacity=".75"
+                    d="M1 1l4 4 4-4"
+                  /></svg></span>
+            </button>
+
+            <button>
+              Company
+              <span class="span2"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="10" height="7">
+                  <path
+                    class="icone"
+                    fill="none"
+                    stroke="#FFF"
+                    stroke-width="2"
+                    opacity=".75"
+                    d="M1 1l4 4 4-4"/></svg></span>
+            </button>
+
+            <div class="connect">
+              <button>
+                Connect
+                <span class="span2"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="7"
+                  >
+                    <path
+                      class="icone"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="2"
+                      opacity=".75"
+                      d="M1 1l4 4 4-4"
+                    /></svg></span>
+              </button>
+
+              <ul>
+                <li>Contact</li>
+                <li>Newsletter</li>
+                <li>LinkdIn</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- <div class="menuPrincipal">
+                    <a href="">Product <span class="span2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"><path class="icone" fill="none" stroke="#FFF" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4"/></svg></span></a>
+                    <a href="">Company <span class="span2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"><path class="icone" fill="none" stroke="#FFF" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4"/></svg></span></a>
+                   <a href="">Connect <span class="span2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"><path class="icone" fill="none" stroke="#FFF" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4"/></svg></span></a>
+                        <ul>
                         <li>Contact</li>
                         <li>Newsletter</li>
                         <li>LinkdIn</li>
-                    </ul> -->
-                </nav>
-            <nav clas=>
-                    <p>Login</p>
-                    <button>Sign Up</button>
-            </nav>
-        
-          
-            <div class="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+                    </ul>
+                </div> -->
 
-        </header>
+          <div class="login">
+            <p>Login</p>
+            <button class="signUp">Sign Up</button>
+          </div>
+        </nav>
 
-
-        <div class="accueil">
-            <h1>A modern publishing platform</h1>
-            <p class="underTitle">Grow your audience and build your online brand</p>
-
-            <div class="AccueilButton">
-                <button >Start For Free</button>
-                <button class="buttonSecondary">Learn More</button>
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+      </header>
 
+      <div class="accueil">
+        <h1>A modern publishing platform</h1>
+        <p class="underTitle">Grow your audience and build your online brand</p>
+
+        <div class="accueilButton">
+          <button>Start For Free</button>
+          <button class="buttonSecondary">Learn More</button>
         </div>
-
+      </div>
     </section>
 
     <!------------------------------------SECTION 2 ------------------------------------>
     <section class="section2">
-        <h2>Designed for the future</h2>
+      <h2>Designed for the future</h2>
 
-        <div class="containerSection2">
-            <img src="images/illustration-editor-mobile.svg" alt="" class="editorMobile">
-            <div class="articles">
-            <article class="article1">
-                <h3>Introducing an extensible editor</h3>
-                <p>Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.</p>
-            </article>
-            <article class="article2">
-                <h3>Robust content management</h3>
-                <p>Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
-            </article>
+      <div class="containerSection2">
+        <img
+          src="images/illustration-editor-mobile.svg"
+          alt=""
+          class="editorMobile"
+        />
+        <div class="articles">
+          <article class="article1">
+            <h3>Introducing an extensible editor</h3>
+            <p>
+              Blogr features an exceedingly intuitive interface which lets you
+              focus on one thing: creating content. The editor supports
+              management of multiple blogs and allows easy manipulation of
+              embeds such as images, videos, and Markdown. Extensibility with
+              plugins and themes provide easy ways to add functionality or
+              change the looks of a blog.
+            </p>
+          </article>
+          <article class="article2">
+            <h3>Robust content management</h3>
+            <p>
+              Flexible content management enables users to easily move through
+              posts. Increase the usability of your blog by adding customized
+              categories, sections, format, or flow. With this functionality,
+              you’re in full control.
+            </p>
+          </article>
         </div>
-                <img src="images/illustration-editor-desktop.svg" alt="" class="editorDeskstop">
-        </div>
-
+        <img
+          src="images/illustration-editor-desktop.svg"
+          alt=""
+          class="editorDeskstop"
+        />
+      </div>
     </section>
 
     <!------------------------------------SECTION 3 ------------------------------------>
 
     <section class="section3">
-  
-        <div class="containerS3">
-            <img src="images/illustration-phones.svg" alt=""class="mobileDeskstop">
-            <article>
-            <h2>State of the Art Infrastructure</h2>
-            <p>With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
-            </article>
-        </div>
-
+      <div class="containerS3">
+        <img
+          src="images/illustration-phones.svg"
+          alt=""
+          class="mobileDeskstop"
+        />
+        <article>
+          <h2>State of the Art Infrastructure</h2>
+          <p>
+            With reliability and speed in mind, worldwide data centers provide
+            the backbone for ultra-fast connectivity. This ensures your site
+            will load instantly, no matter where your readers are, keeping your
+            site competitive.
+          </p>
+        </article>
+      </div>
     </section>
 
+    <!------------------------------------SECTION 4 ------------------------------------>
+    <section class="section4">
+      <div class="containerSection4">
+        <img
+          src="images/illustration-laptop-desktop.svg"
+          alt=""
+          class="laptopDeskstop"
+        />
+        <img
+          src="images/illustration-laptop-mobile.svg"
+          alt=""
+          class="laptopMobile"
+        />
+        <div class="articles">
+          <article class="article1">
+            <h3>Free, open, simple</h3>
+            <p>
+              Blogr is a free and open source application backed by a large
+              community of helpful developers. It supports features such as code
+              syntax highlighting, RSS feeds, social media integration,
+              third-party commenting tools, and works seamlessly with Google
+              Analytics. The architecture is clean and is relatively easy to
+              learn.
+            </p>
+          </article>
+          <article class="article2">
+            <h3>Powerful tooling</h3>
+            <p>
+              Flexible content management enables users to easily move through
+              posts. Increase the usability of your blog by adding customized
+              categories, sections, format, or flow. With this functionality,
+              you’re in full control.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!------------------------------------SECTION 5 ------------------------------------>
 
-        <!------------------------------------SECTION 4 ------------------------------------>
-        <section class="section4">
-    
-            <div class="containerSection4">
-                <img src="images/illustration-laptop-desktop.svg" alt="" class="laptopDeskstop">
-                <img src="images/illustration-laptop-mobile.svg" alt="" class="laptopMobile">
-                <div class="articles">
-                <article class="article1">
-                    <h3>Free, open, simple</h3>
-                    <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
-                </article>
-                <article class="article2">
-                    <h3>Powerful tooling</h3>
-                    <p>Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
-                </article>
-            </div>
-                   
-            </div>
-    
-        </section>
+    <footer>
+      <img src="images/logo.svg" alt="logo Blogr" />
 
-        <!------------------------------------SECTION 5 ------------------------------------>
-
-        <footer>
-            <img src="images/logo.svg" alt="logo Blogr">
-
-   
-            <ul>
-                <li class="navWord">Product</li>
-                <li>Overview</li>
-                <li>Pricing</li>
-                <li>Markeplace</li>
-                <li>Features</li>
-                <li>Integrations</li>
-            </ul>
-            <ul>
-                <li class="navWord">Company</li>
-                <li>About</li>
-                <li>Team</li>
-                <li>Blog</li>
-                <li>Careers</li>
-            </ul>
-            <ul>
-                <li class="navWord">Connect</li>
-                <li>Contact</li>
-                <li>Newsletter</li>
-                <li>Linkedin</li>
-            </ul>
-        
-
-        </footer>
+      <ul>
+        <li class="navWord">Product</li>
+        <li>Overview</li>
+        <li>Pricing</li>
+        <li>Markeplace</li>
+        <li>Features</li>
+        <li>Integrations</li>
+      </ul>
+      <ul>
+        <li class="navWord">Company</li>
+        <li>About</li>
+        <li>Team</li>
+        <li>Blog</li>
+        <li>Careers</li>
+      </ul>
+      <ul>
+        <li class="navWord">Connect</li>
+        <li>Contact</li>
+        <li>Newsletter</li>
+        <li>Linkedin</li>
+      </ul>
+    </footer>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
